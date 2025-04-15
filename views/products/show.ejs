@@ -1,5 +1,8 @@
-# What:
-# How:
+# What is it: Shows products, product details, product price + sets it to two decimal places, & category. Buttons allows you to go back to the products page, to edit product,
+# & allows you to delete product. 
+
+# How: Section allows these to be grouped together. The divs make up for the smaller groups. product.name is calling
+
 # Integration: This page is accesed through the app.get function located at lines 143 to 165 of app.js, where when the directory "/products/(id)" is navigated to, this page is rendered.
 # The View button located at line 29 of show.ejs navigates the user to the directory ./products/(id), where (id) is the id of the product they selected. This prompts app.js to get the 
 # corresponding product from products.json, an object which is subsequently passed to show.ejs to display the name, price, category, and description of.
@@ -7,22 +10,23 @@
 
 <section class="product-details">
     <h2>
-        <%= product.name %>
+        <%= product.name %> #product name 
     </h2>
 
     <div class="product-info">
-        <p class="price">Price: $<%= product.price.toFixed(2) %>
+        <p class="price">Price: $<%= product.price.toFixed(2) %> # displays price + sets it to 2 decimal places 
         </p>
-        <p class="category">Category: <%= product.category %>
+        <p class="category">Category: <%= product.category %> #displays category 
         </p>
         <p class="description">
-            <%= product.description %>
+            <%= product.description %> #displays description for products
         </p>
     </div>
 
+    #buttons
     <div class="actions">
-        <a href="/products" class="btn">Back to Products</a>
-        <a href="/products/<%= product.id %>/edit" class="btn edit-btn">Edit</a>
-        <button class="btn delete-btn" data-id="<%= product.id %>">Delete</button>
+        <a href="/products" class="btn">Back to Products</a> #button goes back to product page
+        <a href="/products/<%= product.id %>/edit" class="btn edit-btn">Edit</a> #button takes you to products page with specified product id + lets you edit it 
+        <button class="btn delete-btn" data-id="<%= product.id %>">Delete</button> #delete product button
     </div>
 </section>
