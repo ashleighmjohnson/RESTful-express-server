@@ -1,35 +1,35 @@
-<%# What is it: Shows products, product details, product price + sets it to two decimal places, & category. Buttons allows you to go back to the products page, to edit product,
- & allows you to delete product. 
+// What is it: Shows products, product details, product price + sets it to two decimal places, & category. Buttons allows you to go back to the products page, to edit product,
+//& allows you to delete product. 
 
- How does it do? Section allows these to be grouped together. The divs make up for the smaller groups. Products name, price, category, 
+// How does it do? Section allows these to be grouped together. The divs make up for the smaller groups. Products name, price, category, 
 
- How is it integrated? This page is accesed through the app.get function located at lines 143 to 165 of app.js, where when the directory "/products/(id)" is navigated to, this page is rendered.
- The View button located at line 29 of show.ejs navigates the user to the directory ./products/(id), where (id) is the id of the product they selected. This prompts app.js to get the 
- corresponding product from products.json, an object which is subsequently passed to show.ejs to display the name, price, category, and description of.
+// How is it integrated? This page is accesed through the app.get function located at lines 143 to 165 of app.js, where when the directory "/products/(id)" is navigated to, this page is rendered.
+// The View button located at line 29 of show.ejs navigates the user to the directory ./products/(id), where (id) is the id of the product they selected. This prompts app.js to get the 
+// corresponding product from products.json, an object which is subsequently passed to show.ejs to display the name, price, category, and description of.
 
- Why is This Important: It allows the user to become more educated on the product they plan to purchase. Consumer confidence plays a huge role in sales, and this page gives consumers
- all the more affirmation that their purchase is an honest one.
-%>
+// Why is This Important: It allows the user to become more educated on the product they plan to purchase. Consumer confidence plays a huge role in sales, and this page gives consumers
+// all the more affirmation that their purchase is an honest one.
+
 
 <section class="product-details">
     <h2>
-        <%= product.name %> <%# Displays the "name" variable of the product object passed in by app.js. %>
+        <%= product.name %> // Displays the "name" variable of the product object passed in by app.js. 
     </h2>
 
     <div class="product-info">
-        <p class="price">Price: $<%= product.price.toFixed(2) %> <%# Displays price + sets it to 2 decimal places.  %>
+        <p class="price">Price: $<%= product.price.toFixed(2) %> // Displays price + sets it to 2 decimal places.  
         </p>
-        <p class="category">Category: <%= product.category %> <%# Displays category. %>
+        <p class="category">Category: <%= product.category %> // Displays category. 
         </p>
         <p class="description">
-            <%= product.description %> <%# Displays description for products. %>
+            <%= product.description %> // Displays description for products. 
         </p>
     </div>
 
-    <%#Buttons %>
+    // Buttons 
     <div class="actions">
-        <a href="/products" class="btn">Back to Products</a> <%# Returns the user to the "products" page. %>
-        <a href="/products/<%= product.id %>/edit" class="btn edit-btn">Edit</a> <%# Sends the user to the "edit" page of the product object currently held in show.ejs. %>
-        <button class="btn delete-btn" data-id="<%= product.id %>">Delete</button> <%# Deletes the product. %>
+        <a href="/products" class="btn">Back to Products</a> // Returns the user to the "products" page. 
+        <a href="/products/<%= product.id %>/edit" class="btn edit-btn">Edit</a> // Sends the user to the "edit" page of the product object currently held in show.ejs. 
+        <button class="btn delete-btn" data-id="<%= product.id %>">Delete</button> // Deletes the product. 
     </div>
 </section>
