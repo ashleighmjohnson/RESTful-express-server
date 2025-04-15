@@ -1,6 +1,8 @@
 # What:
 # How:
-# Integration:
+# Integration: This page is accesed through the app.get function located at lines 143 to 165 of app.js, where when the directory "/products/(id)" is navigated to, this page is rendered.
+# The View button located at line 29 of show.ejs navigates the user to the directory ./products/(id), where (id) is the id of the product they selected. This prompts app.js to get the 
+# corresponding product from products.json, an object which is subsequently passed to show.ejs to display the name, price, category, and description of.
 # Why: 
 
 <section class="product-details">
