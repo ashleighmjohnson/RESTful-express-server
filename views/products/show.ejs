@@ -1,7 +1,8 @@
-// What is it: Shows products, product details, product price + sets it to two decimal places, & category. Buttons allows you to go back to the products page, to edit product,
-//& allows you to delete product. 
+// What is it: Shows the product name, details, price (set to two decimal places), and category.
+// The buttons let you go back to the products page, edit the product, or delete the product. 
 
-// How does it do? Section allows these to be grouped together. The divs make up for the smaller groups. Products name, price, category, 
+// How does it do? Passes product from app.js to show.ejs. Show.ejs displays the product where its specifically being called sp, its name, price, category,
+// and description. It also has buttons to go back to products page, to edit product, and to delete product. 
 
 // How is it integrated? This page is accesed through the app.get function located at lines 143 to 165 of app.js, where when the directory "/products/(id)" is navigated to, this page is rendered.
 // The View button located at line 29 of show.ejs navigates the user to the directory ./products/(id), where (id) is the id of the product they selected. This prompts app.js to get the 
